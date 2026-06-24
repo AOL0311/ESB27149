@@ -7,8 +7,8 @@ class AppTest {
 
     @Test
     void testDivideNormal() {
-        double expected = 1.0 / 3.0;
-        double actual = App.divideAndRound(1, 3, 2);
+        double expected = 0.33;
+        double actual = App.divideAndRound(1, 3,2);
         
         assertEquals(expected, actual, 0.0001, "Counting result not match expected.");
     }
@@ -20,7 +20,8 @@ class AppTest {
 
     @Test
     void testDivideByZero() {
-        double result = App.divideAndRound(1, 0, 2);
-        assertTrue(Double.isInfinite(result), "Counting result not match expected.");
+        assertThrows(ArithmeticException.class, () -> {
+            App.divideAndRound(1, 0, 2);
+        }, "Expected ArithmeticException for division by zero.");
     }
 }
