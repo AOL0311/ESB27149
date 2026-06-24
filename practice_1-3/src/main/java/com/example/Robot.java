@@ -14,6 +14,6 @@ public abstract class Robot {
     }
 
     public void introduce() {
-        System.out.println("這是一台「" + name + "」，高：「" + height + "」，寬：「" + width + "」，由「" + manufacturer + "」製造。");
+        System.out.println("This is a " + name + ", height: " + height + ", width: " + width + ", manufactured by " + manufacturer + ".");
     }
 }
